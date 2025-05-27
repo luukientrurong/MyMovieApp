@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/movie_navigation"
+    app:startDestination="@id/homeFragmnet">
+
+    <fragment
+        android:id="@+id/homeFragmnet"
+        android:name="com.example.movieapp.Fragments.HomeFragmnet"
+        android:label="HomeFragmnet"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragmnet_to_movieByGenreFragment"
+            app:destination="@id/movieByGenreFragment" />
+        <action
+            android:id="@+id/action_homeFragmnet_to_downloadFragment"
+            app:destination="@id/downloadFragment"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragmnet_to_favoriteFragment"
+            app:destination="@id/favoriteFragment"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragmnet_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragmnet_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragmnet_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/downloadFragment"
+        android:name="com.example.movieapp.Fragments.DownloadFragment"
+        android:label="DownloadFragment"
+        tools:layout="@layout/fragment_download">
+        <action
+            android:id="@+id/action_downloadFragment_to_homeFragmnet"
+            app:destination="@id/homeFragmnet"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_downloadFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_downloadFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_downloadFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_downloadFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.movieapp.Fragments.FavoriteFragment"
+        android:label="FavoriteFragment"
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_favoriteFragment_to_homeFragmnet"
+            app:destination="@id/homeFragmnet"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_favoriteFragment_to_downloadFragment"
+            app:destination="@id/downloadFragment"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_favoriteFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_favoriteFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_favoriteFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.movieapp.Fragments.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_homeFragmnet"
+            app:destination="@id/homeFragmnet"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_searchFragment_to_downloadFragment"
+            app:destination="@id/downloadFragment"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_searchFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_searchFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_searchFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.movieapp.Fragments.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_homeFragmnet"
+            app:destination="@id/homeFragmnet"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_profileFragment_to_downloadFragment"
+            app:destination="@id/downloadFragment"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_profileFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_profileFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:popUpTo="@id/homeFragmnet"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_profileFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieByGenreFragment"
+        android:name="com.example.movieapp.Fragments.MovieByGenreFragment"
+        android:label="MovieByGenreFragment"
+        tools:layout="@layout/fragment_movie_by_genre">
+        <action
+            android:id="@+id/action_movieByGenreFragment_to_homeFragmnet"
+            app:destination="@id/homeFragmnet"
+            app:popUpTo="@id/homeFragmnet" />
+        <argument
+            android:name="genre"
+            app:argType="com.example.movieapp.Models.MyGenre" />
+        <action
+            android:id="@+id/action_movieByGenreFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.example.movieapp.Fragments.MovieDetailFragment"
+        android:label="MovieDetailFragment"
+        tools:layout="@layout/fragment_movie_detail">
+        <action
+            android:id="@+id/action_movieDetailFragment_to_homeFragmnet"
+            app:destination="@id/homeFragmnet" />
+        <action
+            android:id="@+id/action_movieDetailFragment_to_movieByGenreFragment"
+            app:destination="@id/movieByGenreFragment" />
+        <action
+            android:id="@+id/action_movieDetailFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_movieDetailFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_movieDetailFragment_to_downloadFragment"
+            app:destination="@id/downloadFragment" />
+        <action
+            android:id="@+id/action_movieDetailFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+    </fragment>
+</navigation>

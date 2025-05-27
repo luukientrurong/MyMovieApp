@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray2"
+    tools:context=".Activities.WatchMovieActivity">
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:controller_layout_id="@layout/custom_exo_controller"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="16:9"
+        app:resize_mode="fit"
+        app:use_controller="true" />
+
+    <ProgressBar
+        android:id="@+id/progressBarLoadUrlFilm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/playerView"
+        app:layout_constraintEnd_toEndOf="@+id/playerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/playerView" />
+    <ImageView
+        android:id="@+id/imgErrorVideo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/error_video"
+        app:layout_constraintTop_toTopOf="@id/playerView"
+        app:layout_constraintStart_toStartOf="@id/playerView"
+        app:layout_constraintBottom_toBottomOf="@id/playerView"
+        app:layout_constraintEnd_toEndOf="@id/playerView"
+        android:scaleType="centerCrop"
+        android:visibility="gone"/>
+    <ImageView
+        android:id="@+id/imgIconBack"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/icon_back"
+        app:tint="@color/white"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvTenPhim"
+        android:layout_margin="16dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="32sp"
+        android:text="Ten Phim"
+        app:layout_constraintTop_toBottomOf="@id/playerView"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabTextAppearance="@style/CustomTabText"
+        android:id="@+id/tabLayoutWathcMovie"
+        android:background="@color/gray2"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTenPhim" />
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:id="@+id/viewPagerWathcMovie"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTenPhim" />
+    <ImageView
+        android:id="@+id/iconDownload"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/icon_download"
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

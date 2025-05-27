@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#49000000"
+    android:padding="8dp">
+
+   <LinearLayout
+       android:gravity="center"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent">
+
+      <ImageButton
+          android:id="@+id/exo_rewind"
+          android:layout_width="48dp"
+          android:layout_height="48dp"
+          android:scaleType="fitXY"
+          android:background="?android:attr/selectableItemBackground"
+          android:layout_marginEnd="32dp"
+          android:src="@drawable/icon_replay10" />
+
+      <ImageView
+          android:id="@+id/exo_play"
+          android:layout_width="64dp"
+          android:layout_height="64dp"
+          android:src="@drawable/icon_play2"
+          tools:layout_editor_absoluteX="155dp"
+          tools:layout_editor_absoluteY="80dp" />
+
+      <ImageView
+          android:id="@+id/exo_pause"
+          android:layout_width="64dp"
+          android:layout_height="64dp"
+          android:src="@drawable/icon_pause"
+          tools:layout_editor_absoluteX="136dp"
+          tools:layout_editor_absoluteY="240dp" />
+
+      <ImageButton
+          android:layout_width="48dp"
+          android:layout_height="48dp"
+          android:scaleType="fitXY"
+          android:background="?android:attr/selectableItemBackground"
+          android:id="@+id/exo_fast_forward"
+          android:src="@drawable/icon_forward10"
+          android:layout_marginStart="32dp"
+          tools:layout_editor_absoluteX="80dp"
+          tools:layout_editor_absoluteY="147dp" />
+   </LinearLayout>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:gravity="center"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent">
+
+      <TextView
+          android:id="@id/exo_position"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:padding="8dp"
+          android:text="10:00"
+          android:textColor="@color/white"
+          android:textSize="14sp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent" />
+      <com.google.android.exoplayer2.ui.DefaultTimeBar
+          android:id="@id/exo_progress"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          app:played_color="#FFFFFF"
+          app:unplayed_color="#50FFFFFF"
+          app:buffered_color="#9EFFFFFF"
+          app:scrubber_color="#FFFFFF"
+          app:bar_height="4dp"
+          app:touch_target_height="48dp" />
+      <TextView
+          android:id="@id/exo_duration"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/white"
+          android:text="11:00"
+          android:textSize="14sp"
+          android:padding="8dp" />
+      <ImageButton
+          android:id="@+id/exo_pip"
+          android:layout_width="32dp"
+          android:layout_height="32dp"
+          android:background="?android:attr/selectableItemBackground"
+          android:scaleType="fitXY"
+          android:src="@drawable/icon_pip"/>
+      <ImageButton
+          android:id="@+id/exo_fullscreen_exit_fullscreen"
+          android:layout_width="32dp"
+          android:layout_height="32dp"
+          android:src="@drawable/fullscreen_selector"
+          android:layout_margin="8dp"
+          android:background="?android:attr/selectableItemBackground"
+          android:scaleType="fitXY"/>
+   </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
