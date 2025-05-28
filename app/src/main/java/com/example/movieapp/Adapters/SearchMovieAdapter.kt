@@ -43,5 +43,9 @@ class SearchMovieAdapter:RecyclerView.Adapter<SearchMovieAdapter.SearchMovieView
     override fun onBindViewHolder(holder: SearchMovieViewHolder, position: Int) {
         val movie = differ.currentList[position]
         holder.bind(movie)
+        holder.itemView.setOnClickListener {
+            onClick?.invoke(movie)
+        }
     }
+    var onClick: ((Movie)-> Unit)?=null
 }

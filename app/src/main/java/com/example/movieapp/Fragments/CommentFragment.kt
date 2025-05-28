@@ -16,6 +16,7 @@ import com.example.movieapp.ViewModels.CommentViewModel
 import com.example.movieapp.ViewModels.ProfileViewModel
 import com.example.movieapp.ViewModels.SharedViewModel.UserSharedViewModel
 import com.example.movieapp.databinding.FragmentCommentBinding
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -83,6 +84,7 @@ class CommentFragment  : Fragment() {
                 }
             }
         }
+        binding.editTextComment
         binding.imgSendCommnet.setOnClickListener {
             val commentText = binding.editTextComment.text.toString().trim()
             if(!commentText.isNullOrEmpty()){

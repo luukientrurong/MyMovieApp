@@ -11,6 +11,7 @@ import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.OnScrollListener
@@ -76,7 +77,13 @@ class SearchFragment: Fragment(R.layout.fragment_search) {
         binding.iconClear.setOnClickListener {
             binding.edtSearch.text.clear()
         }
-
+        searchAdapter.onClick = {
+            val b = Bundle().apply {
+                putInt("movieId",it.id)
+            }
+            val navHostFragment = requireActivity().supportFragmentManager.findFragmentById(R.id.frameMovieActivity) as? NavHostFragment
+            navHostFragment?.navController?.navigate(R.id.action_searchFragment_to_movieDetailFragment, b)
+        }
     }
     private fun setupRvSearch(){
         binding.rvSearchResult.apply {

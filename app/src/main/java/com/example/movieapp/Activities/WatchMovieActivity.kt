@@ -132,6 +132,9 @@ class WatchMovieActivity : AppCompatActivity() {
                 Toast.makeText(this, "Không có link phim để tải", Toast.LENGTH_SHORT).show()
             }
         }
+        binding.imgIconBack.setOnClickListener {
+            this@WatchMovieActivity.finish()
+        }
     }
 
     private fun startMovie(url: String) {
@@ -145,13 +148,6 @@ class WatchMovieActivity : AppCompatActivity() {
             Uri.parse(url)
         }
 
-//        val file = File("file:///storage/emulated/0/Android/data/com.example.movieapp/files/Movies/Exterritorial.mp4")
-//        if (!file.exists()) {
-//            Log.e("WatchCheckLoad", "File không tồn tại: $url")
-//            Toast.makeText(this, "Không tìm thấy file", Toast.LENGTH_SHORT).show()
-//            return
-//        }
-        //val uri = Uri.fromFile(file)
         val dataSourceFactory = if (isLocalFile) {
             DefaultDataSource.Factory(this)
         } else {
@@ -195,6 +191,8 @@ class WatchMovieActivity : AppCompatActivity() {
         })
     }
     private fun getDataAndPlay(){
+        movieDetail = intent.getParcelableExtra<MovieDetail>("movie")
+        setUpViewPager()
         binding.tvTenPhim.text = movieDetail!!.title
         viewModel.fetchMovieUrl(movieDetail!!.id.toString())
         lifecycleScope.launch {
@@ -339,9 +337,7 @@ class WatchMovieActivity : AppCompatActivity() {
                 window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
             }
         }
-        binding.imgIconBack.setOnClickListener {
-            finish()
-        }
+
     }
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
@@ -384,11 +380,11 @@ class WatchMovieActivity : AppCompatActivity() {
             }
         }
         val fragments = listOf(
-            recommendFragment,
-            commentFragment
+            commentFragment,
+            recommendFragment
         )
         binding.viewPagerWathcMovie.adapter = ViewPagerAdapter(this, fragments)
-        val tabTitles = listOf("Đề xuất", "Bình luận")
+        val tabTitles = listOf("Bình luận","Đề xuất" )
         TabLayoutMediator(
             binding.tabLayoutWathcMovie,
             binding.viewPagerWathcMovie
